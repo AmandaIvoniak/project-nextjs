@@ -1,12 +1,12 @@
 import { styled } from "..";
 
-export const HomeContainer = styled('main', {
-    display: 'flex',
-    // gap: '3rem',
-    width: '100%',
-    maxWidth: "calc(100vw - ((100vw-1180px)/2))",
-    marginLeft: 'auto',
-    minHeight: 656
+export const HomeContainer = styled("div", {
+  display: "flex",
+  // gap: '3rem',
+  width: "100%",
+  maxWidth: "calc(100vw - ((100vw - 1180px)/2))",
+  marginLeft: "auto",
+  minHeight: 656,
 });
 
 export const Product = styled("a", {
@@ -20,7 +20,7 @@ export const Product = styled("a", {
     alignItems: 'center',
     justifyContent: 'center',
     img: {
-      objectFit:'cover'
+      objectFit:'cover',
     },
     footer: {
         position: "absolute",
@@ -49,7 +49,7 @@ export const Product = styled("a", {
     '&:hover': {
         footer: {
             transform: 'translateY(0%)',
-            opacity:1
+            opacity:1,
         }
     }
 });

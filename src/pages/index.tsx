@@ -10,6 +10,7 @@ import { GetStaticProps } from 'next'
 // import { GetServerSideProps } from 'next'
 import Stripe from 'stripe'
 import { useEffect } from 'react'
+import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 // teste sobre themes
 // const Button = styled('button', {
@@ -44,13 +45,15 @@ export default function Home({ products }: ProductsProps) {
     <HomeContainer ref={sliderRef} className='keen-slider'>
       {products.map(product => {
         return (
-          <Product className='keen-slider__slide' key={product.id}>
-            <Image src={product.imageURL} width={520} height={480} alt='' />
-            <footer>
-              <strong>{product.name}</strong>
-              <span>{product.price}</span>
-            </footer>
-          </Product>
+          <Link key={product.id} href={`/product/${product.id}`} prefetch={false}>
+            <Product className='keen-slider__slide'>
+              <Image src={product.imageURL} width={520} height={480} alt='' />
+              <footer>
+                <strong>{product.name}</strong>
+                <span>{product.price}</span>
+              </footer>
+            </Product>
+          </Link>
       )
       })}
     </HomeContainer>

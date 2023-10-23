@@ -11,6 +11,7 @@ import { GetStaticProps } from 'next'
 import Stripe from 'stripe'
 import { useEffect } from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 const inter = Inter({ subsets: ['latin'] })
 // teste sobre themes
 // const Button = styled('button', {
@@ -42,6 +43,10 @@ export default function Home({ products }: ProductsProps) {
 
  
   return (
+    <>
+      <Head>
+        <title>Home | Ignite Shop</title>
+      </Head>
     <HomeContainer ref={sliderRef} className='keen-slider'>
       {products.map(product => {
         return (
@@ -56,7 +61,8 @@ export default function Home({ products }: ProductsProps) {
           </Link>
       )
       })}
-    </HomeContainer>
+      </HomeContainer>
+    </>
   )
 }
 
